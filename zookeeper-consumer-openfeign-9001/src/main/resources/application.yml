@@ -1,0 +1,22 @@
+server:
+  port: 9001
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 172.31.83.146:2181
+#控制openFeign的日志输出
+logging:
+  level:
+    com.reid.cloud.service.ServerInfo: debug
+#openFeign
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
+  ReadTimeout: 3000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+  #同一台实例的最大重试次数，但是不包括首次调用，默认为1次
+  MaxAutoRetries: 1
+  #重试负载均衡其他实例的最大重试次数，不包括首次调用，默认为0次
+  MaxAutoRetriesNextServer: 0
+  #是否对所有操作都重试，默认false
+  OkToRetryOnAllOperations: false
