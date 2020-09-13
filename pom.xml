@@ -12,6 +12,9 @@
         <module>zookeeper-provider-8002</module>
         <module>zookeeper-consumer-9001</module>
         <module>zookeeper-consumer-openfeign-9001</module>
+        <module>provider-hystrix-8001</module>
+        <module>eureka-server-7001</module>
+        <module>consumer-hystrix-9001</module>
     </modules>
     <packaging>pom</packaging>
 
