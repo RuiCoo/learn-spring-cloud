@@ -15,6 +15,7 @@
         <module>provider-hystrix-8001</module>
         <module>eureka-server-7001</module>
         <module>consumer-hystrix-9001</module>
+        <module>hystrix-dashboard-9002</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -18,13 +18,9 @@ public class DemoService {
         return "request success";
     }
 
-    @HystrixCommand(fallbackMethod = "slow_fallback",
-            commandProperties = {
-                    @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
-                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
-                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
-                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
-            })
+    @HystrixCommand(fallbackMethod = "slow_fallback", commandProperties ={
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "4000")
+    })
     public String slowServer() {
         log.info("process slow request");
         try {
