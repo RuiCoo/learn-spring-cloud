@@ -16,6 +16,8 @@
         <module>eureka-server-7001</module>
         <module>consumer-hystrix-9001</module>
         <module>hystrix-dashboard-9002</module>
+        <module>cloud-gateway-9527</module>
+        <module>spring-config-centor</module>
     </modules>
     <packaging>pom</packaging>
 

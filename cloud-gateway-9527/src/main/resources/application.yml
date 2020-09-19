@@ -1,0 +1,21 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-getway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: provider-hystrix
+        uri: http://localhost:8001
+        predicates:
+          - Path=/server/id/**
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
